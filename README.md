@@ -1,13 +1,22 @@
 
 # <Employee-Tracker.>
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# Mission
+## Table of Contents
+  * [Mission](#mission)
+  * [Parameters](#parameters)
+  * [GITHUB page](#github-page)
+  * [Demo Link](#demo-link)
+  * [Screenshots](#screenshots)
+  * [Any Questions?](#any-questions)
+
+## Mission
     * to build a command line application from scratch to manage a company's employee database, using NODE.js, Inquirer and MySQL
     * have a clean, polished and responsive user interface
 
 
-# Parameters
+## Parameters
     
     Given the command line applciation which takes the user input;
 
@@ -30,11 +39,28 @@
     
 
 
-# Link to the GITHUB page
+## GITHUB page
 
 https://github.com/roman-ac/employee-tracker-by-roman-ac
 
+## Demo Link
+
+xxx
 
 # Screenshots
 
-   ![screenshot](./Assets/screenshot.png)
+![screenshot](./Assets/screenshot.png)
+<br /> 
+<br /> 
+
+![screenshot](./Assets/screenshot1.png)
+<br /> 
+<br /> 
+
+![screenshot](./Assets/screenshot2.png)
+
+
+## Any-Questions?
+  ### Reach out here: 
+  [roman-ac](https://github.com/roman-ac)  
+  roman25xx@gmail.com
