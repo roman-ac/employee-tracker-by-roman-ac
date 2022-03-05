@@ -49,16 +49,16 @@ function firstPrompt() {
 
         switch (task) {
         case "View All Departments":
-            viewDepartments()
+            viewDepartments();
         break;
         case "View All Roles":
             viewRoles();
         break;
         case "View All Employees":
-
+            viewEmployee();
         break;
         case "Add A Department":
-
+            addDepartment();
         break;
         case "Add A Role":
 
@@ -95,4 +95,46 @@ function viewDepartments() {
         });
       }
 
+            // view all employees
+      function viewEmployee() {
+        console.log("Selecting all employees...\n");
+        db.query("SELECT first_name AS `First Name`, last_name AS `Last Name`, role_id AS `Role Id` FROM employees", function (err, res) {
+          if (err) throw err;
+          // Log all results of the SELECT statement
+          console.table(res);
+      
+        });
+      }
+
+      function addDepartment() {
+        // we need to get the role data
+        db.query("SELECT * FROM departments", function (err, res) {
+          if (err) throw err;
+          const departments = res.map(element => {
+            return element.id
+          })
+          inquirer
+            .prompt([
+              {
+                name: "department",
+                type: "input",
+                message: "What department would you like to add?"
+              }
+      
+            ])
+            .then(function (answer) {
+              // when finished prompting, insert a new item into the db with that info
+              db.query(
+                "INSERT INTO departments SET ?",
+                answer,
+                function (err) {
+                  if (err) throw err;
+                  console.log(`${answer.department} was added successfully`);
+                  // re-prompt the user for if they want to bid or post
+
+                }
+              );
+            });
+        })
+      }
   

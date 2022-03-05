@@ -35,6 +35,6 @@
 https://github.com/roman-ac/employee-tracker-by-roman-ac
 
 
-# Screenshot
+# Screenshots
 
    ![screenshot](./Assets/screenshot.png)
