@@ -1,6 +1,8 @@
-
+const path = require('path');
 const mysql = require ('mysql2');
 const inquirer = require("inquirer");
+const fs = require('fs');
+
 
 
 require('dotenv').config();
@@ -9,12 +11,12 @@ require('dotenv').config();
 const db = mysql.createConnection (
     {
         host: 'localhost',
-        port: 3301,
+        port: 3306,
         user: 'root',
         password: process.env.DB_PASSWORD || '',
         database: 'employee_db'
     },
-    console.log(`Connected to employee_db database.`)
+    console.log(`Connected to employee_db database....\n`)
 );
 
 // connect to the mysql server and sql database
@@ -47,11 +49,10 @@ function firstPrompt() {
 
         switch (task) {
         case "View All Departments":
-            viewDepartments();
+            viewDepartments()
         break;
-
         case "View All Roles":
-
+            viewRoles();
         break;
         case "View All Employees":
 
@@ -72,5 +73,26 @@ function firstPrompt() {
       })
   };
 
+  // view all departments
+function viewDepartments() {
+    console.log("Selecting all departments...\n");
+    db.query("SELECT id AS `ID`, department AS `Department` FROM departments", function (err, res) {
+      if (err) throw err;
+      // Log all results of the SELECT statement
+      console.table(res);
+  
+    })
+    };
+
+      // view all roles
+    function viewRoles() {
+        console.log("Selecting all roles...\n");
+        db.query("SELECT title AS `Title`, salary AS `Salary`, dep_id AS `Department Id` FROM roles", function (err, res) {
+          if (err) throw err;
+          // Log all results of the SELECT statement
+          console.table(res);
+      
+        });
+      }
 
   
