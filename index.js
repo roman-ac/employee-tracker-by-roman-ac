@@ -148,7 +148,7 @@ function viewDepartments() {
         db.query("SELECT * FROM departments", function (err, res) {
           if (err) throw err;
           const departments = res.map(element => {
-            return element.department
+            return element.id
             
           })
           inquirer
@@ -196,11 +196,11 @@ function viewDepartments() {
           const roles = res.map(element => element.title)
           inquirer.prompt([
             {
-              name: "firstName",
+              name: "first_name",
               type: "input",
               message: "What is the new employees first name?"
             },{
-              name: "lastName",
+              name: "last_name",
               type: "input",
               message: "What is the new employees last name?"
             }, {
@@ -215,13 +215,13 @@ function viewDepartments() {
             });
             console.log(chosenRole.id);
             const newEmployee = {
-              firstName: answers.firstName,
-              lastName: answers.lastName,
-              roleId: chosenRole.id
+              first_name: answers.first_name,
+              last_name: answers.last_name,
+              role_id: chosenRole.id
             };
             db.query("INSERT INTO employees SET ?", newEmployee, (err, success) => {
               if (err) throw err;
-              console.log(`${newEmployee.firstName} was added successfully`);
+              console.log(`${newEmployee.first_name} was added successfully`);
 
               anythingElse();
 

@@ -41,11 +41,11 @@
 
 ## GITHUB page
 
-https://github.com/roman-ac/employee-tracker-by-roman-ac
+[Github](https://github.com/roman-ac/employee-tracker-by-roman-ac)
 
 ## Demo Link
 
-xxx
+chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/app.html#/files/bd5a1ea2-b0d3-47fa-9a65-5fce523c4513
 
 # Screenshots
 
@@ -56,8 +56,6 @@ xxx
 ![screenshot](./Assets/screenshot1.png)
 <br /> 
 <br /> 
-
-![screenshot](./Assets/screenshot2.png)
 
 
 ## Any-Questions?
